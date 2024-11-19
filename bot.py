@@ -89,3 +89,5 @@ def message_clients():
     except requests.exceptions.RequestException as e:
         print("Error while calling the API: ", str(e))
 
+
+    """

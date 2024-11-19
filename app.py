@@ -560,4 +560,18 @@ def start_background_function():
     
 if __name__ == "__main__":
     driver = webdriver.Firefox(options=firefox_options)
-    start_background_funct
+    start_background_function()
+    open_window()
+
+    while True:
+        eel.sleep(1)    
+
+    
+
+
+    
+
+    
+
+
+

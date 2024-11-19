@@ -51,7 +51,7 @@ def message_clients():
         except Exception as e:
             print("exception occurred: ", str(e))
 
-        time.sleep(120) #in seconds
+        time.sleep(3600) #in seconds
     """
         #call get_response here and send response to API
     url = "http://localhost:4000/messaging_endpoint"

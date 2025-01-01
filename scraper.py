@@ -71,24 +71,11 @@ def scrape_listings(query, minPrice, maxPrice, taskUrl):
         "taskUrl": taskUrl
     }
 
-    retry_strategy = Retry(
-        total=10000,
-        backoff_factor=0.5,
-        status_forcelist=[404, 500, 502, 503, 504],
-        allowed_methods=["HEAD", "GET", "POST", "OPTIONS"]
-
-    )
-    adapter = HTTPAdapter(max_retries=retry_strategy)
-
-    session = requests.Session()
-    session.mount("http://", adapter)
-    session.mount("https://", adapter)
-
 
     
 
     try:
-        response = session.post(url, json=data)
+        response = requests.post(url, json=data)
 
         if response.status_code == 200:
             #table.put_item(Item={'title': title, 'description': desc_text, 'price': price, 'listing_url': listing_url,'task_url':taskUrl})
